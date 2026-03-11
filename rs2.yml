@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: flower-app-rs
+  namespace: elzabeth-ns
+  labels:
+    app: flower
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: flower-web
+  template:
+    metadata:
+      labels:
+        app: flower-web
+    spec:
+      containers:
+        - name: flower-container
+          image: elzabeth03/flowerapp:v1.1.0
+          ports:
+           - containerPort: 3015 
