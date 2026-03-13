@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ey-cart-deploy
+  name: ey-cart-deployment
   namespace: elzabeth-ns
   labels:
     app: ey-cart
